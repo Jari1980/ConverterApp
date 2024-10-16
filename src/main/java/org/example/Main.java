@@ -71,7 +71,12 @@ public class Main {
             String amount = scan.nextLine();
             try{
                 exh = Double.parseDouble(amount);
-                break;
+                if(exh < 0){
+                    System.out.println("Cant exhange negative amount.");
+                }
+                else{
+                    break;
+                }
             }
             catch (Exception ex){
                 System.out.println("Not a valid number.");
