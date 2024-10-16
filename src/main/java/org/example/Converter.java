@@ -2,10 +2,10 @@ package org.example;
 
 public class Converter {
     public static double sekToUsd(double amount){
-        return amount * Rate.sekToUsd;
+        return (amount * Rate.sekToUsd);
     }
     public static double sekToEuro(double amount){
-        return amount * Rate.sekToEuro;
+        return (amount * Rate.sekToEuro);
     }
     public static double euroToSek(double amount){
         return amount * Rate.euroToSek;

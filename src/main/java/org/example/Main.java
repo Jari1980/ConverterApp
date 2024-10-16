@@ -9,7 +9,7 @@ public class Main {
     }
 
     public static void menu(){
-        double amount;
+        double amountToExhange;
         double amountExhanged;
         var scan = new Scanner(System.in);
         while(true){
@@ -25,24 +25,28 @@ public class Main {
             int optionNum = Integer.parseInt(option);
             switch(optionNum){
                 case 1:
-                    amount = amount();
-                    amountExhanged = Converter.sekToUsd(amount);
-                    System.out.println("You will receive " + amount + "USD");
+                    amountToExhange = amount();
+                    amountExhanged = Converter.sekToUsd(amountToExhange);
+                    System.out.format("You will receive %.2f USD", amountExhanged);
+                    System.out.println();
                     break;
                 case 2:
-                    amount = amount();
-                    amountExhanged = Converter.usdToSek(amount);
-                    System.out.println("You will receive " + amount + "SEK");
+                    amountToExhange = amount();
+                    amountExhanged = Converter.usdToSek(amountToExhange);
+                    System.out.format("You will receive %.2f SEK", amountExhanged);
+                    System.out.println();
                     break;
                 case 3:
-                    amount = amount();
-                    amountExhanged = Converter.sekToEuro(amount);
-                    System.out.println("You will receive " + amount + "Euro");
+                    amountToExhange = amount();
+                    amountExhanged = Converter.sekToEuro(amountToExhange);
+                    System.out.format("You will receive %.2f Euro", amountExhanged);
+                    System.out.println();
                     break;
                 case 4:
-                    amount = amount();
-                    amountExhanged = Converter.euroToSek(amount);
-                    System.out.println("You will receive " + amount + "SEK");
+                    amountToExhange = amount();
+                    amountExhanged = Converter.euroToSek(amountToExhange);
+                    System.out.format("You will receive %.2f SEK", amountExhanged);
+                    System.out.println();
                     break;
                 case 0:
                     System.out.println("Closing program");
@@ -55,6 +59,7 @@ public class Main {
         catch (Exception e){
             System.out.println("Not a valid number, choose again.");
             }
+            System.out.println();
         }
     }
 
@@ -68,7 +73,7 @@ public class Main {
                 exh = Double.parseDouble(amount);
                 break;
             }
-            catch (Exception e){
+            catch (Exception ex){
                 System.out.println("Not a valid number.");
             }
         }
